@@ -41,3 +41,4 @@ pod install
 
 ## Future Plans
 - Implement unit and ui tests
+- Reduce the `configureFahrenheit` and `configureCelsius` functions to be one, so there is less code repetiton as possible! 
