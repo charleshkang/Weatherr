@@ -1,5 +1,5 @@
 # C4QWeather
-View a 7 day weather forecast for Long Island City. Temperatures shown are min&max temperatures, as well as the forecast day. I used Swift 2.3 and followed the MVC Design Pattern.
+View a 7 day weather forecast for Long Island City. Temperatures shown are min&max temperatures, as well as the forecast day. I used Swift 3 and followed the MVC Design Pattern.
 
 ## Implementation
 I chose MVC as the design pattern for this project because it's what I'm most used to, and through careful abstraction, can be very organized. I used GCD to make my data fetching asynchronous. Because they are public functions, this leads to reusability in future projects. I implemented error handling in my `WeatherStatus` file, and took advantage of `guard`s early exit feature to ensure any errors from the backend were handled.
@@ -27,7 +27,7 @@ open Podfile
 - Add the following to Podfile
   ```swift
   source 'https://github.com/CocoaPods/Specs.git'
-  platform :ios, '9.0'
+  platform :ios, '10.0'
   use_frameworks!
 
   pod 'Alamofire', '~> 3.0’
@@ -41,3 +41,4 @@ pod install
 
 ## Future Plans
 - Implement unit and ui tests
+- Reduce the `configureFahrenheit` and `configureCelsius` functions to be one, so there is less code repetiton as possible! 
