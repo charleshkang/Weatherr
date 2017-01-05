@@ -26,7 +26,7 @@ public class WeatherRequester {
     //MARK: Action Methods
     func getWeather(for completion: ((Result<[Weather]>) -> Void)?) {
         background {
-                Alamofire.request(Constant.URLWithIDAndSecret).responseJSON { (response) in
+                Alamofire.request(Constant.urlWithIDAndSecret).responseJSON { (response) in
                 guard let statusCode = response.response?.statusCode  else {
                     main { completion?(.failure(.unexpectedError)) }
                     return

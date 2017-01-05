@@ -12,7 +12,7 @@ public struct Constant {
     
     static let clientID = "SDq0UgYX9lQSH3LgncE2Q"
     static let clientSecret = "pKG1wJ64C6jjtFrxto82QI5WnQWgAHUXWrLsb0RQ"
-    static let URLWithIDAndSecret = "http://api.aerisapi.com/forecasts/11101?client_id=\(clientID)&client_secret=\(clientSecret)"
+    static let urlWithIDAndSecret = "http://api.aerisapi.com/forecasts/11101?client_id=\(clientID)&client_secret=\(clientSecret)"
     static let weatherCellIdentifier = "weatherCellIdentifier"
 }
 
