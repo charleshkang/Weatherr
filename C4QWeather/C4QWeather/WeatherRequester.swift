@@ -21,13 +21,14 @@ public func background(_ function: @escaping () -> Void) {
 public class WeatherRequester {
     
     //MARK: Private Properties
-    private let dataParser = WeatherParser()
+    private let weatherParser = WeatherParser()
     
     //MARK: Action Methods
     func getWeather(for completion: ((Result<[Weather]>) -> Void)?) {
+
         background {
                 Alamofire.request(Constant.urlWithIDAndSecret).responseJSON { (response) in
-                guard let statusCode = response.response?.statusCode  else {
+                guard let statusCode = response.response?.statusCode else {
                     main { completion?(.failure(.unexpectedError)) }
                     return
                 }
@@ -41,7 +42,7 @@ public class WeatherRequester {
                         return
                     }
                 let json = JSON(data: jsonData)
-                let weatherObjects = self.dataParser.parseWeatherJSON(json)
+                let weatherObjects = self.weatherParser.parseWeatherJSON(json)
                 main { completion?(.success(weatherObjects))
                 }
             }

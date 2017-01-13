@@ -6,7 +6,6 @@
 //  Copyright © 2016 Charles Kang. All rights reserved.
 //
 
-import Foundation
 import SwiftyJSON
 
 class WeatherParser {
@@ -15,7 +14,7 @@ class WeatherParser {
     
     /**
      use flatMap instead of map here because data from a backend can always fail,
-     so use flatMap so we only return successful weather objects
+     use flatMap so we only return successful weather objects
      */
     func parseWeatherJSON(_ json: JSON) -> [Weather] {
         let weatherArray = json["response"][0]["periods"].arrayValue
@@ -28,7 +27,7 @@ extension Weather {
     /**
      create a failable initializer to make sure
      we only get properties that are valid. also use
-     guard to take advantage of its early exit features
+     guard to take advantage of its early exit feature
      */
     init?(json: JSON) {
         guard let maxTempF = json["maxTempF"].int,
